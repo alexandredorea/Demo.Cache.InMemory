@@ -5,25 +5,25 @@ namespace Demo.Cache.Api.Controllers
 {
     [ApiController]
     [Route("cars")]
-    public class CarController : ControllerBase
+    public class CarsController : ControllerBase
     {
-        private readonly ICarStore _store;
+        private readonly ICarService _carService;
 
-        public CarController(ICarStore store)
+        public CarsController(ICarService store)
         {
-            _store = store;
+            _carService = store;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_store.List());
+            return Ok(_carService.List());
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_store.Get(id));
+            return Ok(_carService.Get(id));
         }
     }
 }

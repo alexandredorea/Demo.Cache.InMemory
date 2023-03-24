@@ -2,7 +2,7 @@
 
 namespace Demo.Cache.Api.Stores;
 
-public interface ICarStore
+public interface ICarService
 {
     CarDto List();
 
